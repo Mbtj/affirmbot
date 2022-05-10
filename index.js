@@ -1,8 +1,7 @@
 // Require the necessary discord.js classes
 const { Client, Intents } = require('discord.js');
 require("dotenv").config();
-
-const fetch = reuire("node-fetch");
+import { getAffirmation } from './affirmations';
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
@@ -17,4 +16,10 @@ client.on("message", msg => {
   }
 })
 
+client.on('message', msg => {
+  if (msg.content === "affirmation") {
+    getAffirmation
+      .then(aff => { msg.reply(aff)});
+  }
+})
 client.login(process.env.TOKEN)
