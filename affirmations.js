@@ -1,6 +1,6 @@
-const fetch = reuire("node-fetch");
+import fetch from 'node-fetch';
 
-function getAffirmation() {
+export default function getAffirmation() {
   return fetch("https://dulce-affirmations-api.herokuapp.com/affirmation")
     .then(res => {
       console.log(res)
@@ -8,4 +8,4 @@ function getAffirmation() {
     });  
 }
 
-module.exports = { getAffirmation }
+// module.exports = { getAffirmation }
