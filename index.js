@@ -1,7 +1,9 @@
 // Require the necessary discord.js classes
-const { Client, Intents } = require('discord.js');
-require("dotenv").config();
-import { getAffirmation } from './affirmations';
+import { Client, Intents } from 'discord.js';
+// require("dotenv").config();
+import 'dotenv/config';
+// const getAffirmation = require('./affirmations.js').getAffirmation
+import getAffirmation from './affirmations.js'
 
 // Create a new client instance
 const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
