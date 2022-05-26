@@ -5,7 +5,7 @@ export default async function getAffirmation() {
 
   const data = await res.json();
   //1
-  return data;
+  return data[0].phrase;
 }
 
 // module.exports = { getAffirmation }
