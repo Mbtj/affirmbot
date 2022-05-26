@@ -6,7 +6,12 @@ import 'dotenv/config';
 import getAffirmation from './affirmations.js'
 
 // Create a new client instance
-const client = new Client({ intents: [Intents.FLAGS.GUILDS] });
+const client = new Client({
+  intents: [
+    Intents.FLAGS.GUILDS,
+    Intents.FLAGS.GUILD_MESSAGES
+  ]
+});
 console.log('hello')
 client.on("ready", () => {
   console.log(`Logged in as ${client.user.tag}!`)
@@ -21,7 +26,7 @@ client.on("message", msg => {
 client.on('message', msg => {
   if (msg.content === "affirmation") {
     getAffirmation
-      .then(aff => { msg.reply(aff)});
+      .then(aff => { msg.reply(aff) });
   }
 })
 client.login(process.env.TOKEN)
