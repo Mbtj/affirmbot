@@ -25,7 +25,7 @@ client.on("message", msg => {
 
 client.on('message', msg => {
   if (msg.content === "affirmation") {
-    getAffirmation
+    getAffirmation()
       .then(aff => { msg.reply(aff) });
   }
 })
