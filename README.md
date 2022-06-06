@@ -12,3 +12,8 @@ Discord bot designed to remind you of your worth and your power.
   - Visit the generated url on the bottom of the page and select your desired server.
 
 4. In the affirmbot directory, run `npm i` then `npm start`
+
+## APIs and dependencies
+ - [https://github.com/misselliev/affirmations-api](affirmations-api by misselliev)
+- Node 16.14.0
+- Discord.js 13
