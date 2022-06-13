@@ -2,6 +2,7 @@
 import { Client, Intents } from 'discord.js';
 import 'dotenv/config';
 import getAffirmation from './affirmations.js'
+import mongoose from "mongoose";
 
 // Create a new client instance
 const client = new Client({
@@ -11,7 +12,11 @@ const client = new Client({
   ]
 });
 console.log('hello');
-client.on("ready", () => {
+client.on("ready", async () => {
+  await mongoose.connect(process.env.MONGO_URI || "", 
+    {
+      keepAlive: true
+    })
   console.log(`Logged in as ${client.user.tag}!`)
 })
 
